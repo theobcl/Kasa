@@ -1,4 +1,5 @@
 import { plantList } from '../datas/plantList'
+import { CareScale } from '../components/CareScale'
 
 function Cart() {
   const categories = plantList.reduce(
@@ -16,7 +17,7 @@ function Cart() {
 			</ul>
 			<ul>
 				{plantList.map((plant) => (
-					<li key={plant.id}>{plant.name}</li>
+					<li key={plant.id}>{plant.name} {plant.isBestSale ? <span>🔥</span> : null}</li>
 				))}
 			</ul>
 		</div>

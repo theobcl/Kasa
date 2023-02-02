@@ -8,7 +8,7 @@ function Header() {
       <img src={logoRed} alt="logo kasa" />
       <Links>
         <Link to="/">Accueil</Link>
-        <Link to="/survey">Questionnaire</Link>
+        <Link to="/about">A Propos</Link>
       </Links>
     </HeaderContainer>
   );

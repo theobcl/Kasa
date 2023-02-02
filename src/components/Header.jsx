@@ -23,10 +23,12 @@ const HeaderContainer = styled.header`
 `;
 
 const Links = styled.div`
-  text-decoration: none;
-  font-size: 1.5rem;
-  color: #ff6060;
-  margin: 0 1.5rem;
+  a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #ff6060;
+    padding: 1rem;
+  }
 `;
 
 export default Header;

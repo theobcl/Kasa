@@ -1,7 +1,7 @@
 function Flat() {
   return (
     <div>
-      <h1>Maison à Louer 🧮</h1>
+      <h1>Appartement</h1>
     </div>
   );
 }

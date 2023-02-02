@@ -1,0 +1,14 @@
+{
+  "extends": ["airbnb"],
+  "rules": {
+    "no-console": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
+    "react/no-unescaped-entities": 0
+  },
+  "plugins": ["react"],
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}

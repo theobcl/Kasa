@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import logoRed from '../../assets/Header/logo_red.svg';
 
@@ -7,8 +7,8 @@ function Header() {
     <HeaderContainer>
       <Img src={logoRed} alt="logo kasa" />
       <Links>
-        <Link to="/">Accueil</Link>
-        <Link to="/about">A Propos</Link>
+        <NavLink to="/">Accueil</NavLink>
+        <NavLink to="/about">A Propos</NavLink>
       </Links>
     </HeaderContainer>
   );
@@ -41,8 +41,8 @@ const Links = styled.div`
     }
   }
 
-  a: active {
-    border-bottom: 1px #ff6060 solid;
+  a.active {
+    border-bottom: 0.2rem #ff6060 solid;
   }
 `;
 

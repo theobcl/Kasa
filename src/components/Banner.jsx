@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 function Banner({ image, text }) {
   return (
-    <BannerContainer>
-      <BannerImg src={image} alt="Bannière" />
+    <BannerContainer image={image}>
       <BannerText>{text}</BannerText>
     </BannerContainer>
   );
@@ -11,38 +10,34 @@ function Banner({ image, text }) {
 
 const BannerContainer = styled.div`
   height: 14rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(${(props) => props.image});
+  background-size: cover;
   margin-bottom: 2rem;
   position: relative;
-
-  @media (max-width: 1490px) {
-    height: 7rem;
-  }
-`;
-
-const BannerImg = styled.img`
-  border-radius: 2rem;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
 
   @media (max-width: 1490px) {
     border-radius: 0.5rem;
+    height: 7rem;
+    justify-content: start;
+    background-position: bottom;
   }
 `;
 
 const BannerText = styled.span`
   color: white;
   font-size: 3rem;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  z-index: 3;
+  padding: 0 1.5rem;
 
   @media (max-width: 1490px) {
-    text-align: start;
     font-size: 1.5rem;
-    transform: translate(-80%, -50%);
+    width: 12rem;
   }
 `;
 

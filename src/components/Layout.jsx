@@ -14,11 +14,12 @@ function Layout({ children }) {
 }
 
 const MainContainer = styled.main`
-  margin: auto 10%;
+  margin: 2rem auto;
   width: 80%;
+  min-height: 100vh;
 
   @media (max-width: 1490px) {
-    margin: auto 5%;
+    margin: 1rem auto;
     width: 90%;
   }
 `;

@@ -14,7 +14,7 @@ function RoutesPath() {
           <Route path="*" element={<Error />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/lodging" element={<Lodging />} />
+          <Route path="/lodging/:id" element={<Lodging />} />
         </Routes>
       </Layout>
     </Router>

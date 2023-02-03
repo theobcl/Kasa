@@ -12,7 +12,7 @@ function Home() {
       <Banner image={BannerImg} text="Chez vous, partout et ailleurs" />
       <CardsContainer>
         {LodgingList.map((lodging) => (
-          <NavLink key={lodging.id} to="/">
+          <NavLink key={lodging.id} to="/about">
             <Card
               key={lodging.id}
               id={lodging.id}
@@ -32,6 +32,18 @@ const CardsContainer = styled.div`
   padding: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media (max-width: 1490px) {
+    background-color: white;
+    display: block;
+    padding: 0;
+  }
 `;
 
 export default Home;

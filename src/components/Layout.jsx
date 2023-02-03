@@ -1,4 +1,5 @@
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 import Header from './Layouts/Header';
 import Footer from './Layouts/Footer';
 
@@ -6,14 +7,20 @@ function Layout({ children }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <MainContainer>{children}</MainContainer>
       <Footer />
     </>
   );
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+const MainContainer = styled.main`
+  margin: auto 10%;
+  width: 80%;
+
+  @media (max-width: 1490px) {
+    margin: auto 5%;
+    width: 90%;
+  }
+`;
 
 export default Layout;

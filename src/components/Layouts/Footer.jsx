@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logoWhite from '../../assets/logo_white.svg';
+import logoWhite from '../../assets/Footer/logo_white.svg';
 
 function Footer() {
   return (
@@ -23,10 +23,20 @@ const FooterContainer = styled.footer`
 
 const Image = styled.img`
   height: 4rem;
+
+  @media (max-width: 1490px) {
+    height: 2rem;
+  }
 `;
 
 const Text = styled.p`
   font-size: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 0;
+  text-align: center;
+
+  @media (max-width: 1490px) {
+    font-size: 0.725rem;
+  }
 `;
 export default Footer;

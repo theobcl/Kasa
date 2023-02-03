@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import logoRed from '../../assets/logo_red.svg';
+import logoRed from '../../assets/Header/logo_red.svg';
 
 function Header() {
   return (
     <HeaderContainer>
-      <img src={logoRed} alt="logo kasa" />
+      <Img src={logoRed} alt="logo kasa" />
       <Links>
         <Link to="/">Accueil</Link>
         <Link to="/about">A Propos</Link>
@@ -22,12 +22,23 @@ const HeaderContainer = styled.header`
   padding: 32px;
 `;
 
+const Img = styled.img`
+  @media (max-width: 1490px) {
+    height: 3rem;
+  }
+`;
+
 const Links = styled.div`
   a {
     text-decoration: none;
     font-size: 1.5rem;
     color: #ff6060;
     margin: 1rem;
+
+    @media (max-width: 1490px) {
+      margin: 0.5rem;
+      font-size: 0.725rem;
+    }
   }
 
   a: active {

@@ -4,7 +4,8 @@
     "no-console": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".jsx"] }],
-    "react/no-unescaped-entities": 0
+    "react/no-unescaped-entities": 0,
+    "react/prop-types": "off"
   },
   "plugins": ["react"],
   "env": {

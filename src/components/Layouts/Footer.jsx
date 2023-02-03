@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logoWhite from '../assets/logo_white.svg';
+import logoWhite from '../../assets/logo_white.svg';
 
 function Footer() {
   return (

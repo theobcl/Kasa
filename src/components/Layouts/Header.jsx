@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import logoRed from '../assets/logo_red.svg';
+import logoRed from '../../assets/logo_red.svg';
 
 function Header() {
   return (
@@ -27,7 +27,11 @@ const Links = styled.div`
     text-decoration: none;
     font-size: 1.5rem;
     color: #ff6060;
-    padding: 1rem;
+    margin: 1rem;
+  }
+
+  a: active {
+    border-bottom: 1px #ff6060 solid;
   }
 `;
 

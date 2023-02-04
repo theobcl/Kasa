@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Slideshow from '../components/Slideshow';
 import Tag from '../components/Tag';
+import Rating from '../components/Rating';
 import LodgingList from '../data/lodging.json';
 
 function Lodging() {
@@ -22,6 +23,7 @@ function Lodging() {
         <div>
           <p>{lodgingData.host.name}</p>
           <img src={lodgingData.host.picture} alt="host portrait" />
+          <Rating grade={lodgingData.grade} />
         </div>
       </InfoContainer>
     </>

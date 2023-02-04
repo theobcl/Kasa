@@ -1,7 +1,14 @@
+import { useParams } from 'react-router-dom';
+
+import Carousel from '../components/Carousel';
+import LodgingList from '../data/lodging.json';
+
 function Lodging() {
+  const id = useParams();
+  const lodgingData = LodgingList.find((lodging) => lodging.id === id.id);
   return (
     <div>
-      <h1>Logement</h1>
+      <Carousel images={lodgingData.pictures} />
     </div>
   );
 }

@@ -19,7 +19,11 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   color: black;
-  padding: 32px;
+  padding: 2rem;
+
+  @media (max-width: 1490px) {
+    padding: 1rem;
+  }
 `;
 
 const Img = styled.img`

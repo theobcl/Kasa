@@ -9,7 +9,10 @@ import Card from '../components/Card';
 function Home() {
   return (
     <>
-      <Banner image={BannerImg} text="Chez vous, partout et ailleurs" />
+      <Banner
+        image={BannerImg}
+        text="Chez vous, partout&nbsp;et&nbsp;ailleurs"
+      />
       <CardsContainer>
         {LodgingList.map((lodging) => (
           <NavLink key={lodging.id} to="/about">

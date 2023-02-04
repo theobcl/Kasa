@@ -8,12 +8,16 @@ function Dropdown({ title, description }) {
 
   return (
     <DropdownContainer>
-      <DropdownTitle>
-        <div>{title}</div>
+      <DropdownMain>
+        <DropdownTitle>{title}</DropdownTitle>
         <a href={`#dropdown-${title}`} onClick={() => setOpen(!open)}>
-          <img src={arrow} alt="Ouvrir cette liste" />
+          <DropdownArrow
+            className={`dropdown-open-${open}`}
+            src={arrow}
+            alt="Open this list"
+          />
         </a>
-      </DropdownTitle>
+      </DropdownMain>
       {open && <DropdownDesc>{description}</DropdownDesc>}
     </DropdownContainer>
   );
@@ -25,23 +29,38 @@ const DropdownContainer = styled.div`
   margin: 0 auto 2rem;
 `;
 
-const DropdownTitle = styled.div`
+const DropdownMain = styled.div`
   background-color: #ff6060;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.7rem 1rem;
   border-radius: 0.3rem;
-  font-size: 1.5rem;
-  z-index: 2;
 `;
 
-const DropdownDesc = styled.div`
+const DropdownTitle = styled.p`
+  font-size: 1.5rem;
+  margin: 0;
+`;
+
+const DropdownArrow = styled.img`
+  transition: transform 0.5s ease-out;
+
+  &.dropdown-open-true {
+    transform: rotate(180deg);
+  }
+`;
+
+const DropdownDesc = styled.p`
   background-color: #f7f7f7;
   color: #ff6060;
   font-size: 1.5rem;
-  padding: 2rem 1rem;
+  font-weight: 200;
+  padding: 2rem 1rem 1rem;
+  margin: 0;
   border-radius: 0.3rem;
-  z-index: 1;
+  position: relative;
+  z-index: -1;
 `;
 
 export default Dropdown;

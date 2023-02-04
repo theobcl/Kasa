@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Banner from '../components/Banner';
 import BannerImg from '../assets/Banner/home-banner.jpg';
-import LodgingList from '../data/logement.json';
+import LodgingList from '../data/lodging.json';
 import Card from '../components/Card';
 
 function Home() {

@@ -27,6 +27,10 @@ const DropdownContainer = styled.div`
   color: white;
   width: 80%;
   margin: 0 auto 2rem;
+
+  @media (max-width: 1490px) {
+    width: 100%;
+  }
 `;
 
 const DropdownMain = styled.div`
@@ -41,6 +45,10 @@ const DropdownMain = styled.div`
 const DropdownTitle = styled.p`
   font-size: 1.5rem;
   margin: 0;
+
+  @media (max-width: 1490px) {
+    font-size: 0.725rem;
+  }
 `;
 
 const DropdownArrow = styled.img`
@@ -48,6 +56,10 @@ const DropdownArrow = styled.img`
 
   &.dropdown-open-true {
     transform: rotate(180deg);
+  }
+
+  @media (max-width: 1490px) {
+    width: 1rem;
   }
 `;
 
@@ -59,8 +71,14 @@ const DropdownDesc = styled.p`
   padding: 2rem 1rem 1rem;
   margin: 0;
   border-radius: 0.3rem;
+  transform: translate(0, -5%);
   position: relative;
   z-index: -1;
+
+  @media (max-width: 1490px) {
+    padding: 1rem 1rem 2rem;
+    font-size: 0.725rem;
+  }
 `;
 
 export default Dropdown;

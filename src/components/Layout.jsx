@@ -16,7 +16,7 @@ function Layout({ children }) {
 const MainContainer = styled.main`
   margin: 2rem auto;
   width: 80%;
-  min-height: 100vh;
+  min-height: 70vh;
 
   @media (max-width: 1490px) {
     margin: 1rem auto;

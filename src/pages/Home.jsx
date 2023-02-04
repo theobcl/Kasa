@@ -15,7 +15,7 @@ function Home() {
       />
       <CardsContainer>
         {LodgingList.map((lodging) => (
-          <NavLink key={lodging.id} to="/about">
+          <NavLink key={lodging.id} to={`/lodging/${lodging.id}/#`}>
             <Card
               key={lodging.id}
               id={lodging.id}

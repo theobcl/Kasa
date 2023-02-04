@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-import Carousel from '../components/Carousel';
+import Slideshow from '../components/Slideshow';
 import LodgingList from '../data/lodging.json';
 
 function Lodging() {
@@ -8,7 +8,7 @@ function Lodging() {
   const lodgingData = LodgingList.find((lodging) => lodging.id === id.id);
   return (
     <div>
-      <Carousel images={lodgingData.pictures} />
+      <Slideshow images={lodgingData.pictures} />
     </div>
   );
 }

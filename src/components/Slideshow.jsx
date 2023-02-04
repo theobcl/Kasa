@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 
-import arrowLeft from '../assets/Carousel/arrow-left.svg';
-import arrowRight from '../assets/Carousel/arrow-right.svg';
+import arrowLeft from '../assets/Slideshow/arrow-left.svg';
+import arrowRight from '../assets/Slideshow/arrow-right.svg';
 
-function Carousel({ images }) {
+function Slideshow({ images }) {
   const [currentImage, changeImg] = useState(0);
   const imageNumber = images.length;
 
@@ -27,40 +27,45 @@ function Carousel({ images }) {
   };
 
   return (
-    <CarouselContainer>
+    <SlideshowContainer>
       {imageNumber > 1 && (
-        <CarouselArrow className="left" type="button" onClick={previousImage}>
+        <SlideshowArrow className="left" type="button" onClick={previousImage}>
           <img src={arrowLeft} alt="Contenu précedent" />
-        </CarouselArrow>
+        </SlideshowArrow>
       )}
       {images.map((image, index) => (
-        <CarouselImg
+        <SlideshowImg
           tabIndex={index}
           className={
-            index === currentImage ? 'carousel-img actif' : 'carrousel-img'
+            index === currentImage ? 'Slideshow-img actif' : 'carrousel-img'
           }
           src={image}
           alt="Logement"
         />
       ))}
       {imageNumber > 1 && (
-        <CarouselArrow className="right" type="button" onClick={nextImage}>
+        <SlideshowArrow className="right" type="button" onClick={nextImage}>
           <img src={arrowRight} alt="Contenu suivant" />
-        </CarouselArrow>
+        </SlideshowArrow>
       )}
-    </CarouselContainer>
+    </SlideshowContainer>
   );
 }
 
-const CarouselContainer = styled.div`
+const SlideshowContainer = styled.div`
   display: block;
   height: 26rem;
   margin: auto auto 2rem auto;
   position: relative;
   width: 100%;
+
+  @media (max-width: 1490px) {
+    height: 16rem;
+    margin: auto auto 1rem auto;
+  }
 `;
 
-const CarouselImg = styled.img`
+const SlideshowImg = styled.img`
   border-radius: 1rem;
   height: 26rem;
   object-fit: cover;
@@ -70,14 +75,19 @@ const CarouselImg = styled.img`
   &.actif {
     display: block;
   }
+
+  @media (max-width: 1490px) {
+    height: 16rem;
+  }
 `;
 
-const CarouselArrow = styled.button`
+const SlideshowArrow = styled.button`
   position: absolute;
   width: 3rem;
   z-index: 1;
   background: none;
   border: 0;
+  padding: 0;
 
   &:hover {
     cursor: pointer;
@@ -88,6 +98,11 @@ const CarouselArrow = styled.button`
     margin-left: 1.5rem;
     top: 50%;
     transform: translateY(-50%);
+
+    @media (max-width: 1490px) {
+      margin-left: 0.5rem;
+      width: 0.5rem;
+    }
   }
 
   &.right {
@@ -95,7 +110,18 @@ const CarouselArrow = styled.button`
     right: 0;
     top: 50%;
     transform: translateY(-50%);
+
+    @media (max-width: 1490px) {
+      margin-right: 0.5rem;
+      width: 0.5rem;
+    }
+  }
+
+  @media (max-width: 1490px) {
+    img {
+      height: 1rem;
+    }
   }
 `;
 
-export default Carousel;
+export default Slideshow;

@@ -3,18 +3,15 @@ import emptyStarImg from '../assets/Rating/empty-star.svg';
 
 function Rating({ grade }) {
   const stars = [];
-  let fullStar = true;
   for (let index = 0; index < 5; index += 1) {
-    if (index === parseInt(grade, 10)) {
-      fullStar = false;
-    }
-    if (fullStar === true) {
+    const fullStar = index < +grade;
+    if (fullStar) {
       stars.push(
         <img
           key={index}
           className="etoile"
           src={fullStarImg}
-          alt={`${grade}/5`}
+          alt={`${index + 1}/5 full star`}
         />,
       );
     } else {
@@ -23,7 +20,7 @@ function Rating({ grade }) {
           key={index}
           className="etoile"
           src={emptyStarImg}
-          alt={`${grade}/5`}
+          alt={`${index + 1}/5 empty star`}
         />,
       );
     }

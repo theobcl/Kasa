@@ -35,7 +35,10 @@ function Slideshow({ images }) {
       )}
       {images.map((image, index) => (
         <SlideshowImg
-          tabIndex={index}
+          key={`-${image.substring(
+            image.lastIndexOf('/') + 1,
+            image.lastIndexOf('.'),
+          )}`}
           className={
             index === currentImage ? 'Slideshow-img actif' : 'carrousel-img'
           }

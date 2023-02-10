@@ -17,13 +17,13 @@ function Lodging() {
           <h1>{lodgingData.title}</h1>
           <p>{lodgingData.location}</p>
           {lodgingData.tags.map((tagName) => (
-            <Tag name={tagName} />
+            <Tag key={`tag-${tagName}`} name={tagName} />
           ))}
         </TitleContainer>
         <div>
           <p>{lodgingData.host.name}</p>
           <img src={lodgingData.host.picture} alt="host portrait" />
-          <Rating grade={lodgingData.grade} />
+          <Rating grade={lodgingData.rating} />
         </div>
       </InfoContainer>
     </>

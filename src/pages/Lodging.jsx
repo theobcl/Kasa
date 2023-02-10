@@ -55,27 +55,48 @@ const InfoContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 2rem;
+
+  @media (max-width: 992px) {
+    display: inline;
+  }
 `;
 
 const TitleContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 0.5rem;
 `;
 
 const LodgingTitle = styled.h1`
   font-size: 2.25rem;
   margin: 0;
+
+  @media (max-width: 992px) {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
 `;
 
 const LodgingAdress = styled.p`
   margin: 0 0 2rem 0;
+
+  @media (max-width: 992px) {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 const HostContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 992px) {
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
 `;
 
 const HostInfos = styled.div`
@@ -88,6 +109,11 @@ const HostImg = styled.img`
   height: 4rem;
   width: 4rem;
   border-radius: 50%;
+
+  @media (max-width: 992px) {
+    height: 2rem;
+    width: 2rem;
+  }
 `;
 
 const HostName = styled.p`
@@ -95,16 +121,37 @@ const HostName = styled.p`
   font-size: 1rem;
   width: 5rem;
   margin: 0 1rem 0 0;
+
+  @media (max-width: 992px) {
+    width: 3rem;
+    font-size: 0.75rem;
+  }
 `;
 
 const DropdownContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+
+  p {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 992px) {
+    display: inline;
+
+    p {
+      font-size: 0.75rem;
+    }
+  }
 `;
 
 const DropdownSpace = styled.div`
   width: 10rem;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 `;
 
 export default Lodging;

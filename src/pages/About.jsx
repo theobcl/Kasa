@@ -22,6 +22,10 @@ function About() {
 const DropdownContainer = styled.div`
   width: 80%;
   margin: auto;
+
+  @media (max-width: 992px) {
+    width: 100%;
+  }
 `;
 
 export default About;

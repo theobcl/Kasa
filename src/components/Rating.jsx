@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import fullStarImg from '../assets/Rating/full-star.svg';
 import emptyStarImg from '../assets/Rating/empty-star.svg';
 
@@ -7,18 +9,16 @@ function Rating({ grade }) {
     const fullStar = index < +grade;
     if (fullStar) {
       stars.push(
-        <img
+        <StarImg
           key={index}
-          className="etoile"
           src={fullStarImg}
           alt={`${index + 1}/5 full star`}
         />,
       );
     } else {
       stars.push(
-        <img
+        <StarImg
           key={index}
-          className="etoile"
           src={emptyStarImg}
           alt={`${index + 1}/5 empty star`}
         />,
@@ -27,5 +27,10 @@ function Rating({ grade }) {
   }
   return stars;
 }
+
+const StarImg = styled.img`
+  @media (max-width: 992px) {
+    width: 1rem;
+`;
 
 export default Rating;

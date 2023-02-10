@@ -138,6 +138,10 @@ const SlideshowCounter = styled.p`
   position: absolute;
   bottom: 0.5rem;
   right: 50%;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 `;
 
 export default Slideshow;

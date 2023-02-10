@@ -12,7 +12,11 @@ function About() {
       <Banner image={aboutBanner} text="" />
       <DropdownContainer>
         {AboutList.map((about) => (
-          <Dropdown title={about.title} description={about.description} />
+          <Dropdown
+            key={`key-${about.title}`}
+            title={about.title}
+            description={about.description}
+          />
         ))}
       </DropdownContainer>
     </div>

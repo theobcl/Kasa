@@ -25,16 +25,12 @@ function Dropdown({ title, description }) {
 }
 
 const DropdownContainer = styled.div`
-  width: 80%;
   margin: 0 auto 2rem;
+  width: 100%;
 
   a {
     color: white;
     text-decoration: none;
-  }
-
-  @media (max-width: 992px) {
-    width: 100%;
   }
 `;
 

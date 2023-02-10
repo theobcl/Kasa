@@ -5,10 +5,16 @@ import Slideshow from '../components/Slideshow';
 import Tag from '../components/Tag';
 import Rating from '../components/Rating';
 import LodgingList from '../data/lodging.json';
+import Dropdown from '../components/Dropdown';
 
 function Lodging() {
   const id = useParams();
   const lodgingData = LodgingList.find((lodging) => lodging.id === id.id);
+
+  const lodgingEquipment = lodgingData.equipments.map((equipment) => (
+    <li key={`-${equipment}`}>{equipment}</li>
+  ));
+
   return (
     <>
       <Slideshow images={lodgingData.pictures} />
@@ -24,14 +30,21 @@ function Lodging() {
             ))}
           </div>
         </TitleContainer>
-        <div>
+        <HostContainer>
+          <HostInfos>
+            <HostName>{lodgingData.host.name}</HostName>
+            <HostImg src={lodgingData.host.picture} alt="host portrait" />
+          </HostInfos>
           <div>
-            <p>{lodgingData.host.name}</p>
-            <img src={lodgingData.host.picture} alt="host portrait" />
+            <Rating grade={lodgingData.rating} />
           </div>
-          <Rating grade={lodgingData.rating} />
-        </div>
+        </HostContainer>
       </InfoContainer>
+      <DropdownContainer>
+        <Dropdown title="Description" description={lodgingData.description} />
+        <DropdownSpace> </DropdownSpace>
+        <Dropdown title="Équipements" description={lodgingEquipment} />
+      </DropdownContainer>
     </>
   );
 }
@@ -41,6 +54,7 @@ const InfoContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 2rem;
 `;
 
 const TitleContainer = styled.div`
@@ -51,11 +65,46 @@ const TitleContainer = styled.div`
 
 const LodgingTitle = styled.h1`
   font-size: 2.25rem;
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 const LodgingAdress = styled.p`
-  margin-top: 0;
+  margin: 0 0 2rem 0;
+`;
+
+const HostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const HostInfos = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const HostImg = styled.img`
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+`;
+
+const HostName = styled.p`
+  text-align: end;
+  font-size: 1rem;
+  width: 5rem;
+  margin: 0 1rem 0 0;
+`;
+
+const DropdownContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+`;
+
+const DropdownSpace = styled.div`
+  width: 10rem;
 `;
 
 export default Lodging;

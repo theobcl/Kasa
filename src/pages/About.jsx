@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import React from 'react';
 import Banner from '../components/Banner';
 import aboutBanner from '../assets/About/about-banner.jpg';
@@ -8,11 +10,18 @@ function About() {
   return (
     <div>
       <Banner image={aboutBanner} text="" />
-      {AboutList.map((about) => (
-        <Dropdown title={about.title} description={about.description} />
-      ))}
+      <DropdownContainer>
+        {AboutList.map((about) => (
+          <Dropdown title={about.title} description={about.description} />
+        ))}
+      </DropdownContainer>
     </div>
   );
 }
+
+const DropdownContainer = styled.div`
+  width: 80%;
+  margin: auto;
+`;
 
 export default About;

@@ -24,7 +24,7 @@ const FooterContainer = styled.footer`
 const Image = styled.img`
   height: 4rem;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     height: 2rem;
   }
 `;
@@ -35,7 +35,7 @@ const Text = styled.p`
   margin-bottom: 0;
   text-align: center;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     font-size: 0.725rem;
   }
 `;

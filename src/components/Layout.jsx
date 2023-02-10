@@ -18,7 +18,7 @@ const MainContainer = styled.main`
   width: 80%;
   min-height: 70vh;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     margin: 1rem auto;
     width: 90%;
   }

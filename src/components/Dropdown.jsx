@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 import arrow from '../assets/About/arrow-bottom.png';
 
@@ -8,27 +9,31 @@ function Dropdown({ title, description }) {
 
   return (
     <DropdownContainer>
-      <DropdownMain>
-        <DropdownTitle>{title}</DropdownTitle>
-        <a href={`#dropdown-${title}`} onClick={() => setOpen(!open)}>
+      <NavLink to={`#dropdown-${title}`} onClick={() => setOpen(!open)}>
+        <DropdownMain>
+          <DropdownTitle>{title}</DropdownTitle>
           <DropdownArrow
             className={`dropdown-open-${open}`}
             src={arrow}
             alt="Open this list"
           />
-        </a>
-      </DropdownMain>
+        </DropdownMain>
+      </NavLink>
       {open && <DropdownDesc>{description}</DropdownDesc>}
     </DropdownContainer>
   );
 }
 
 const DropdownContainer = styled.div`
-  color: white;
   width: 80%;
   margin: 0 auto 2rem;
 
-  @media (max-width: 1490px) {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  @media (max-width: 992px) {
     width: 100%;
   }
 `;
@@ -46,7 +51,7 @@ const DropdownTitle = styled.p`
   font-size: 1.5rem;
   margin: 0;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     font-size: 0.725rem;
   }
 `;
@@ -58,7 +63,7 @@ const DropdownArrow = styled.img`
     transform: rotate(180deg);
   }
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     width: 1rem;
   }
 `;
@@ -75,7 +80,7 @@ const DropdownDesc = styled.p`
   position: relative;
   z-index: -1;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     padding: 1rem 1rem 2rem;
     font-size: 0.725rem;
   }

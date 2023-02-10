@@ -21,7 +21,7 @@ const BannerContainer = styled.div`
   align-items: center;
   z-index: -1;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     border-radius: 0.5rem;
     height: 7rem;
     justify-content: start;
@@ -35,7 +35,7 @@ const BannerText = styled.span`
   z-index: 3;
   padding: 0 1.5rem;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     font-size: 1.5rem;
     width: 12rem;
   }

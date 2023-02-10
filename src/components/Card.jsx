@@ -12,15 +12,14 @@ const CardStyled = styled.div`
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(${(props) => props.image});
   background-size: cover;
-  height: 21rem;
-  width: 21rem;
+  min-height: 21rem;
+  width: 100%;
   border-radius: 0.5rem;
   display: flex;
   align-items: flex-end;
 
-  @media (max-width: 1490px) {
-    height: 16rem;
-    width: 100%;
+  @media (max-width: 992px) {
+    min-height: 16rem;
     margin-bottom: 2rem;
   }
 `;

@@ -20,7 +20,7 @@ const ErrorContainer = styled.div`
   color: #ff6060;
   margin-bottom: 5rem;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     margin: 10rem 0 0;
   }
 
@@ -34,7 +34,7 @@ const ErrorImg = styled.img`
   margin: 0 auto 3rem;
   width: 37rem;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     width: 10rem;
     margin: 0 auto 2rem;
   }
@@ -44,7 +44,7 @@ const ErrorMessage = styled.p`
   font-size: 2.25rem;
   margin: 0 auto 8rem;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     text-align: center;
     font-size: 1.25rem;
     width: 17rem;

@@ -51,6 +51,9 @@ function Slideshow({ images }) {
           <img src={arrowRight} alt="Contenu suivant" />
         </SlideshowArrow>
       )}
+      <SlideshowCounter>
+        {`${currentImage + 1}/${images.length}`}
+      </SlideshowCounter>
     </SlideshowContainer>
   );
 }
@@ -62,7 +65,7 @@ const SlideshowContainer = styled.div`
   position: relative;
   width: 100%;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     height: 16rem;
     margin: auto auto 1rem auto;
   }
@@ -79,7 +82,7 @@ const SlideshowImg = styled.img`
     display: block;
   }
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     height: 16rem;
   }
 `;
@@ -102,7 +105,7 @@ const SlideshowArrow = styled.button`
     top: 50%;
     transform: translateY(-50%);
 
-    @media (max-width: 1490px) {
+    @media (max-width: 992px) {
       margin-left: 0.5rem;
       width: 0.5rem;
     }
@@ -114,17 +117,27 @@ const SlideshowArrow = styled.button`
     top: 50%;
     transform: translateY(-50%);
 
-    @media (max-width: 1490px) {
+    @media (max-width: 992px) {
       margin-right: 0.5rem;
       width: 0.5rem;
     }
   }
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     img {
       height: 1rem;
     }
   }
+`;
+
+const SlideshowCounter = styled.p`
+  z-index: 1;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  color: white;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 50%;
 `;
 
 export default Slideshow;

@@ -14,15 +14,21 @@ function Lodging() {
       <Slideshow images={lodgingData.pictures} />
       <InfoContainer>
         <TitleContainer>
-          <h1>{lodgingData.title}</h1>
-          <p>{lodgingData.location}</p>
-          {lodgingData.tags.map((tagName) => (
-            <Tag key={`tag-${tagName}`} name={tagName} />
-          ))}
+          <div>
+            <LodgingTitle>{lodgingData.title}</LodgingTitle>
+            <LodgingAdress>{lodgingData.location}</LodgingAdress>
+          </div>
+          <div>
+            {lodgingData.tags.map((tagName) => (
+              <Tag key={`tag-${tagName}`} name={tagName} />
+            ))}
+          </div>
         </TitleContainer>
         <div>
-          <p>{lodgingData.host.name}</p>
-          <img src={lodgingData.host.picture} alt="host portrait" />
+          <div>
+            <p>{lodgingData.host.name}</p>
+            <img src={lodgingData.host.picture} alt="host portrait" />
+          </div>
           <Rating grade={lodgingData.rating} />
         </div>
       </InfoContainer>
@@ -37,6 +43,19 @@ const InfoContainer = styled.div`
   width: 100%;
 `;
 
-const TitleContainer = styled.div``;
+const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const LodgingTitle = styled.h1`
+  font-size: 2.25rem;
+  margin-bottom: 0;
+`;
+
+const LodgingAdress = styled.p`
+  margin-top: 0;
+`;
 
 export default Lodging;

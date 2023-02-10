@@ -5,7 +5,9 @@ import logoRed from '../../assets/Header/logo_red.svg';
 function Header() {
   return (
     <HeaderContainer>
-      <Img src={logoRed} alt="logo kasa" />
+      <NavLink to="/">
+        <Img src={logoRed} alt="logo kasa" />
+      </NavLink>
       <Links>
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/about">A Propos</NavLink>
@@ -21,13 +23,13 @@ const HeaderContainer = styled.header`
   color: black;
   padding: 2rem;
 
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     padding: 1rem;
   }
 `;
 
 const Img = styled.img`
-  @media (max-width: 1490px) {
+  @media (max-width: 992px) {
     height: 3rem;
   }
 `;
@@ -39,13 +41,17 @@ const Links = styled.div`
     color: #ff6060;
     margin: 1rem;
 
-    @media (max-width: 1490px) {
+    @media (max-width: 992px) {
       margin: 0.5rem;
       font-size: 0.725rem;
     }
   }
 
   a.active {
+    border-bottom: 0.2rem #ff6060 solid;
+  }
+
+  a:hover {
     border-bottom: 0.2rem #ff6060 solid;
   }
 `;

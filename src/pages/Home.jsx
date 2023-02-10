@@ -42,10 +42,14 @@ const CardsContainer = styled.div`
     text-decoration: none;
   }
 
-  @media (max-width: 1490px) {
+  @media (max-width: 768px) {
     background-color: white;
     display: block;
     padding: 0;
+  }
+
+  @media (min-width: 768px) and (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 

@@ -132,6 +132,7 @@ const DropdownContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-around;
+  list-style-type: none;
 
   p {
     font-size: 1rem;

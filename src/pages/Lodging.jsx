@@ -1,6 +1,7 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-
+import { useEffect } from 'react';
+// import Error from './Error';
 import Slideshow from '../components/Slideshow';
 import Tag from '../components/Tag';
 import Rating from '../components/Rating';
@@ -10,11 +11,15 @@ import Dropdown from '../components/Dropdown';
 function Lodging() {
   const id = useParams();
   const lodgingData = LodgingList.find((lodging) => lodging.id === id.id);
-
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!lodgingData) {
+      navigate('/error');
+    }
+  }, [lodgingData]);
   const lodgingEquipment = lodgingData.equipments.map((equipment) => (
     <li key={`-${equipment}`}>{equipment}</li>
   ));
-
   return (
     <>
       <Slideshow images={lodgingData.pictures} />
